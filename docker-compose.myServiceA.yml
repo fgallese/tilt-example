@@ -1,0 +1,9 @@
+version: '2'
+services:
+  myServiceA:
+    image: alpine
+    volumes:
+      - ./myServiceA/run.sh:/entrypoint/run.sh
+    depends_on:
+      - myServiceB
+    entrypoint: [ "/bin/sh", "-c", "/entrypoint/run.sh" ]

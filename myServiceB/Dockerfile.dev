@@ -1,0 +1,7 @@
+FROM node:10.16-alpine
+WORKDIR /usr/src/app
+COPY package.json .
+COPY src/ .
+RUN sleep 10; npm install
+EXPOSE 4000
+COPY . .
